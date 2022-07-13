@@ -12,7 +12,7 @@ namespace UnitTests
 		
 		TEST_METHOD(TestMethod1)
 		{
-			Assert::AreEqual(number, 14);
+			Assert::AreEqual(number, 51);
 		}
 	};
 
