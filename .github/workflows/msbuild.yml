@@ -1,4 +1,4 @@
-name: MSBuild
+name: MSBuild and Test
 
 on:
   push:
@@ -32,3 +32,10 @@ jobs:
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: MSBuild.exe UnitTest1/UnitTest1.vcxproj /p:Configuration=${{env.BUILD_CONFIGURATION}}
+
+    - name: Add VSTest to PATH
+      uses: darenm/Setup-VSTest@v1
+
+    - name: Run Unit Tests
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: vstest.console.exe UnitTest1\Debug\UnitTests.dll
