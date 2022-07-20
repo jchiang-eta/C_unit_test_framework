@@ -2,10 +2,15 @@
 #include "input.h"
 using namespace std;
 
+int test()
+{
+	int number = 51;
+	string position = "RF";
+	
+	return 2 * number;
+}
+
 int main()
 {
-	cout << "Hello World" << endl;
-	cout << "My number is " << number << endl;
-
 	return 0;
 }
